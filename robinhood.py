@@ -29,7 +29,7 @@ with open("config.json", "r") as keys_file:
     CREDS = keys['bot_token']
 
 login = r.login(user,password,expiresIn=86400)
-
+print("Logged in to robinhood.")
 
 def get_holdings():
     my_stocks = r.build_holdings()
@@ -150,4 +150,4 @@ async def robinhood_loop():
 
 robinhood_loop.start()
 
-client.run(DEV_BOT_TOKEN)
+client.run(CREDS)
